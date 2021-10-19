@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class CronometroBotao extends StatelessWidget {
   final String texto;
   final IconData icone;
+  final void Function()? click;
 
   const CronometroBotao({
     Key? key,
     required this.icone,
-    required this.texto
+    required this.texto,
+    this.click
   }) : super(key: key);
 
   @override
@@ -18,14 +20,14 @@ class CronometroBotao extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         primary: Colors.black,
         padding: EdgeInsets.symmetric(
-          horizontal: _deviceWidth * 0.05,
-          vertical: _deviceHeight * 0.011
+          horizontal: _deviceWidth * 0.07,
+          vertical: _deviceHeight * 0.01
         ),
         textStyle: TextStyle(
           fontSize: 15
         )
       ),
-        onPressed: () {},
+        onPressed: click,
         child: Row(
           children: [
             Padding(
