@@ -7,6 +7,8 @@ class Pomodoro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double _deviceWidth = MediaQuery.of(context).size.width;
+    double _deviceHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -15,7 +17,7 @@ class Pomodoro extends StatelessWidget {
             child: Cronometro(),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 40),
+            padding: EdgeInsets.symmetric(vertical: _deviceHeight * 0.05),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

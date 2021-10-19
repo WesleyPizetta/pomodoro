@@ -13,13 +13,15 @@ class EntradaTempo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double _deviceWidth = MediaQuery.of(context).size.width;
+    double _deviceHeight = MediaQuery.of(context).size.height;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(this.titulo, style: TextStyle(
             fontSize: 25
         ),),
-        SizedBox(height: 10,),
+        SizedBox(height: _deviceHeight * 0.02,),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -31,7 +33,7 @@ class EntradaTempo extends StatelessWidget {
                 ),
               style: ElevatedButton.styleFrom(
                 shape: CircleBorder(),
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(_deviceHeight * 0.01),
                 primary: Colors.red
               ),
             ),
@@ -46,7 +48,7 @@ class EntradaTempo extends StatelessWidget {
               ),
               style: ElevatedButton.styleFrom(
                   shape: CircleBorder(),
-                  padding: EdgeInsets.all(15),
+                  padding: EdgeInsets.all(_deviceHeight * 0.01),
                   primary: Colors.red
               ),
             )

@@ -12,12 +12,14 @@ class CronometroBotao extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double _deviceWidth = MediaQuery.of(context).size.width;
+    double _deviceHeight = MediaQuery.of(context).size.height;
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         primary: Colors.black,
         padding: EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 20
+          horizontal: _deviceWidth * 0.05,
+          vertical: _deviceHeight * 0.011
         ),
         textStyle: TextStyle(
           fontSize: 15
@@ -26,8 +28,11 @@ class CronometroBotao extends StatelessWidget {
         onPressed: () {},
         child: Row(
           children: [
-            Icon(
-              icone,
+            Padding(
+              padding: EdgeInsets.only(right: _deviceWidth * 0.02),
+              child: Icon(
+                icone,
+              ),
             ),
             Text(
               texto,
